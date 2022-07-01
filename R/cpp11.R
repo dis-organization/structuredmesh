@@ -3,3 +3,7 @@
 quad_ib <- function(nx, ny, ydown) {
   .Call(`_structmesh_quad_ib`, nx, ny, ydown)
 }
+
+quad_vb <- function(nx, ny, ydown, zh) {
+  .Call(`_structmesh_quad_vb`, nx, ny, ydown, zh)
+}
