@@ -69,15 +69,6 @@ doubles quad_vb(int nx, int ny,
      // the 1D arrays across each margin, we calculate them first then expand-xy
      writable::doubles xx(nc1);
      writable::doubles yy(nr1);
-     // populate x
-    //  int i;
-    //  for (i = 0; i < nc1; i++) {
-    //     xx[i] = i * dx;
-    //  }
-    // //  populate y
-    //  for (int j = 0; j < nr1; j++) {
-    //     yy[j] = ystart + j * dy;
-    //  }
      for (int jj = 0; jj < nr1; jj++) {
          // increment columns first
          for (int ii = 0; ii < nc1; ii++) {

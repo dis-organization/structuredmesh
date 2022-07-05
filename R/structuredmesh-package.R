@@ -2,7 +2,7 @@
 "_PACKAGE"
 
 ## usethis namespace: start
-#' @useDynLib structmesh, .registration = TRUE
+#' @useDynLib structuredmesh, .registration = TRUE
 ## usethis namespace: end
 NULL
 

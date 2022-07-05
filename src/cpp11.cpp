@@ -7,14 +7,14 @@
 
 // primitives.cpp
 integers quad_ib(int nx, int ny, bool ydown);
-extern "C" SEXP _structmesh_quad_ib(SEXP nx, SEXP ny, SEXP ydown) {
+extern "C" SEXP _structuredmesh_quad_ib(SEXP nx, SEXP ny, SEXP ydown) {
   BEGIN_CPP11
     return cpp11::as_sexp(quad_ib(cpp11::as_cpp<cpp11::decay_t<int>>(nx), cpp11::as_cpp<cpp11::decay_t<int>>(ny), cpp11::as_cpp<cpp11::decay_t<bool>>(ydown)));
   END_CPP11
 }
 // primitives.cpp
 doubles quad_vb(int nx, int ny, bool ydown, bool zh);
-extern "C" SEXP _structmesh_quad_vb(SEXP nx, SEXP ny, SEXP ydown, SEXP zh) {
+extern "C" SEXP _structuredmesh_quad_vb(SEXP nx, SEXP ny, SEXP ydown, SEXP zh) {
   BEGIN_CPP11
     return cpp11::as_sexp(quad_vb(cpp11::as_cpp<cpp11::decay_t<int>>(nx), cpp11::as_cpp<cpp11::decay_t<int>>(ny), cpp11::as_cpp<cpp11::decay_t<bool>>(ydown), cpp11::as_cpp<cpp11::decay_t<bool>>(zh)));
   END_CPP11
@@ -22,13 +22,13 @@ extern "C" SEXP _structmesh_quad_vb(SEXP nx, SEXP ny, SEXP ydown, SEXP zh) {
 
 extern "C" {
 static const R_CallMethodDef CallEntries[] = {
-    {"_structmesh_quad_ib", (DL_FUNC) &_structmesh_quad_ib, 3},
-    {"_structmesh_quad_vb", (DL_FUNC) &_structmesh_quad_vb, 4},
+    {"_structuredmesh_quad_ib", (DL_FUNC) &_structuredmesh_quad_ib, 3},
+    {"_structuredmesh_quad_vb", (DL_FUNC) &_structuredmesh_quad_vb, 4},
     {NULL, NULL, 0}
 };
 }
 
-extern "C" attribute_visible void R_init_structmesh(DllInfo* dll){
+extern "C" attribute_visible void R_init_structuredmesh(DllInfo* dll){
   R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
   R_useDynamicSymbols(dll, FALSE);
   R_forceSymbols(dll, TRUE);
